@@ -3,7 +3,7 @@
 extends RigidBody2D
 
 func _ready():
-	pass
+	linear_velocity = Vector2(50, linear_velocity.y)
 	
 func _physics_process(delta):
 	if rad2deg(rotation) < -30:

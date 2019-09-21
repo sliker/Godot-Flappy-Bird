@@ -5,7 +5,8 @@
 [ext_resource path="res://sprites/bird_orange_1.png" type="Texture" id=3]
 [ext_resource path="res://sprites/bird_orange_2.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
+radius = 6.48812
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -16,17 +17,18 @@ animations = [ {
 } ]
 
 [node name="bird" type="RigidBody2D"]
-position = Vector2( 72, 13.059 )
+position = Vector2( 36, 13.059 )
 gravity_scale = 5.0
+linear_damp = 0.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="anim_sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="anim" type="AnimationPlayer" parent="."]
