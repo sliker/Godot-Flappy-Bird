@@ -4,6 +4,11 @@ const GROUP_PIPES = "pipes"
 const GROUP_GROUNDS = "grounds"
 const GROUP_BIRDS = "birds"
 
+const MEDAL_BRONZE = 1
+const MEDAL_SILVER = 2
+const MEDAL_GOLD = 3
+const MEDAL_PLATINUM = 4
+
 var score_best = 0 setget _set_core_best
 var score_current = 0 setget _set_score_current
 
@@ -18,8 +23,9 @@ func _on_state_changed():
 	score_current = 0
 	
 func _set_core_best(new_value):
-	score_best = new_value
-	emit_signal("score_best_changed")
+	if new_value > score_best:
+		score_best = new_value
+		emit_signal("score_best_changed")
 	pass
 	
 func _set_score_current(new_value):
