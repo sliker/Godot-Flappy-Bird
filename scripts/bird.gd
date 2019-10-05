@@ -22,7 +22,8 @@ func _physics_process(delta):
 	state.update(delta)
 
 func _unhandled_input(event):
-	state.input(event)
+	if state.has_method("unhandled_input"):	
+		state.unhandled_input(event)
 	
 func _on_body_entered(other_body):
 	if state.has_method("on_body_enter"):
@@ -71,9 +72,6 @@ class FlyingState:
 	func update(delta):
 		pass
 		
-	func input(event):
-		pass
-		
 	func exit():
 		bird.gravity_scale = prev_gravity_scale
 		bird.get_node("anim").stop()
@@ -97,10 +95,15 @@ class FlappingState:
 		if bird.linear_velocity.y > 0:
 			bird.angular_velocity = 1.5
 		
-	func input(event):
+	func unhandled_input(event):
 		if event is InputEventKey:
 			if event.pressed and event.scancode == KEY_SPACE:
 				flap()
+				return
+		if event is InputEventMouseButton:
+			if event.pressed and !event.is_echo() and event.button_index == BUTTON_LEFT:
+				flap()
+			
 	
 	func on_body_enter(other_body):
 		if other_body.is_in_group(game.GROUP_PIPES):
@@ -133,9 +136,6 @@ class HitState:
 	func update(delta):
 		pass
 		
-	func input(event):
-		pass
-		
 	func on_body_enter(other_body):
 		if other_body.is_in_group(game.GROUP_GROUNDS):
 			bird.set_state(bird.STATE_GROUNDED)
@@ -155,9 +155,6 @@ class GroundedState:
 		
 	func update(delta):
 		pass
-		
-	func input(event):
-		pass
-		
+
 	func exit():
 		pass
