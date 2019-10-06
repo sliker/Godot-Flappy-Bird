@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/sfx_point.wav-6b8ad2c1431afcc5c633d406bb99d5d1.sample"
+path="res://.import/sfx_die.wav-c8f61cbb9da0910a45e48df46d812df2.sample"
 
 [deps]
 
-source_file="res://audio/sfx_point.wav"
-dest_files=[ "res://.import/sfx_point.wav-6b8ad2c1431afcc5c633d406bb99d5d1.sample" ]
+source_file="res://sounds/sfx_die.wav"
+dest_files=[ "res://.import/sfx_die.wav-c8f61cbb9da0910a45e48df46d812df2.sample" ]
 
 [params]
 

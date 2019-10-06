@@ -18,6 +18,8 @@ func change_stage(stage_path):
 	# fade to black
 	$tex_black.show()
 	$anim.play("fade_in")
+	audio_player.stream = load("res://sounds/sfx_swooshing.wav")
+	audio_player.play()
 	yield($anim, "animation_finished")
 	
 	# change state

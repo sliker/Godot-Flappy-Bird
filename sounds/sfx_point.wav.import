@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/sfx_wing.wav-52e83a68714420582e22ac79df07aca3.sample"
+path="res://.import/sfx_point.wav-4a2872dd50b365de846cb4a85b4b7e5d.sample"
 
 [deps]
 
-source_file="res://audio/sfx_wing.wav"
-dest_files=[ "res://.import/sfx_wing.wav-52e83a68714420582e22ac79df07aca3.sample" ]
+source_file="res://sounds/sfx_point.wav"
+dest_files=[ "res://.import/sfx_point.wav-4a2872dd50b365de846cb4a85b4b7e5d.sample" ]
 
 [params]
 

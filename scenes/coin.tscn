@@ -10,3 +10,5 @@ script = ExtResource( 1 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="coin_player" type="AudioStreamPlayer" parent="."]
